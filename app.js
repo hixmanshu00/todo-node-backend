@@ -10,15 +10,17 @@ export const app = express();
 // using middlewares
 app.use(express.json());
 app.use(cookieParser())
-
-// using routes
-app.use("/api/v1/users",userRouter)
-app.use("/api/v1/tasks",taskRouter)
 app.use(cors({
+    
     origin: [process.env.FRONTEND_URL],
     methods: ["GET","PUT", "POST", "DELETE"],
     credentials: true
 }))
+
+// using routes
+app.use("/api/v1/users",userRouter)
+app.use("/api/v1/tasks",taskRouter)
+
 
 
 app.get('/', (req,res)=> {
