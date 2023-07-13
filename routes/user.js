@@ -1,15 +1,15 @@
 import express from 'express'
-import { Users } from '../models/user.js'
-import { getAllUsers, getUserDetails, login, register } from '../controllers/user.js';
+import { getMyProfile, login, logout, register } from '../controllers/user.js';
+import { isAuthenticated } from '../middlewares/auth.js';
 
 const router = express.Router();
 
-router.get('/all', getAllUsers)
+router.get('/logout', logout)
 
 router.post('/login', login )
 
 router.post('/register', register )
 
-router.get('/userid/:id', getUserDetails)
+router.get('/me',isAuthenticated, getMyProfile)
 
 export default router;

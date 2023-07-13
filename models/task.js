@@ -25,4 +25,4 @@ const schema = new mongoose.Schema({
     }
 })
 
-export const Users = mongoose.model("users", schema);
+export const Task = mongoose.model("tasks", schema);
