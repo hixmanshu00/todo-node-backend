@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(cors({
     
-    origin: [process.env.FRONTEND_URL, process.env.LOCAL_URI],
+    origin: ['https://him-todo-app.netlify.app', 'http://127.0.0.1:5173'],
     methods: ["GET","PUT", "POST", "DELETE"],
     credentials: true
 }))
